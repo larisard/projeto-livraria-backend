@@ -14,5 +14,5 @@ server.use(json())
 server.use(authRouter)
 
 server.listen(process.env.PORT, ()=>{
-    console.log("servidor no ar")
+    console.log("servidor no ar na porta: ", process.env.PORT)
 })
