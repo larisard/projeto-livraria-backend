@@ -2,7 +2,7 @@ import db from "../db.js";
 import bcrypt from "bcrypt";
 import { v4 as uuid } from "uuid";
 
-
+ 
 export async function signup(req,res){
     const user = req.body
     try {
@@ -26,6 +26,7 @@ export async function signup(req,res){
 
 export async function signin(req,res){
   const user = req.body
+  
   try {
     const verifyUser = await db.query(`SELECT * FROM users WHERE name = $1`,[user.name])
     if (verifyUser.rowCount==0){
